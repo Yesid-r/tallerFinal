@@ -32,6 +32,7 @@ public class PanelLogin extends JPanel {
         lblDescrp.setSize(120,120);
         txtUser = new JTextField("Usuario");
         txtUser.setHorizontalAlignment(SwingConstants.CENTER);
+
         passwordField = new JPasswordField("contraseña");
         passwordField.setHorizontalAlignment(SwingConstants.CENTER);
         typeUser = new JComboBox<String>();

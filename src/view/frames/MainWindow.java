@@ -3,6 +3,7 @@ package view.frames;
 import control.Control;
 import view.panels.PanelImage;
 import view.panels.PanelLogin;
+import view.panels.PanelNavigationT;
 import view.service.ResourceService;
 
 import javax.swing.*;
@@ -14,6 +15,7 @@ public class MainWindow extends JFrame {
     private ResourceService rService;
     private PanelImage panelImage;
     private Control control;
+    private PanelNavigationT panelNavigationT;
 
 
     public MainWindow() {
@@ -40,16 +42,18 @@ public class MainWindow extends JFrame {
         lblDescWindow.setHorizontalAlignment(SwingConstants.CENTER);
         panelLogin = new PanelLogin();
         panelImage = new PanelImage();
+        panelNavigationT = new PanelNavigationT();
     }
 
     private void addComponents() {
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(lblDescWindow, BorderLayout.NORTH);
-        panel.setBackground(rService.getColorMain());
-        panel.add(panelImage, BorderLayout.CENTER);
-        add(panel,BorderLayout.CENTER);
-        add(panelLogin, BorderLayout.EAST);
-     //   add(panelImage, BorderLayout.CENTER);
+        //JPanel panel = new JPanel(new BorderLayout());
+        //panel.add(lblDescWindow, BorderLayout.NORTH);
+        //panel.setBackground(rService.getColorMain());
+        //panel.add(panelImage, BorderLayout.CENTER);
+        //add(panel,BorderLayout.CENTER);
+        //add(panelLogin, BorderLayout.EAST);
+     //  // add(panelImage, BorderLayout.CENTER);
+        add(panelNavigationT, BorderLayout.WEST);
 
     }
 
