@@ -1,0 +1,10 @@
+[
+  {
+    "id": "123",
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "user": "jperez@gmail.com",
+    "password": "1234",
+    "groups": []
+  }
+]
