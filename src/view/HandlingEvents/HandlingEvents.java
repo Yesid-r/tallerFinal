@@ -18,7 +18,6 @@ public class HandlingEvents implements ActionListener {
     public void actionPerformed(ActionEvent e) {
     switch (e.getActionCommand()){
         case LOGIN:mainWindow.login();
-            System.out.println("login");
             break;
         case BTN_GROUP:
             String id = e.getSource().toString();

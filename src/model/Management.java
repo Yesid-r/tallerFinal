@@ -32,6 +32,8 @@ public class Management {
     }
     public void loadData(){
         teachers.addAll(servicePersistence.getTeachers());
+        students.addAll(servicePersistence.getStudents());
+        groups.addAll(servicePersistence.getGroups());
 
     }
 

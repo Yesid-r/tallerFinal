@@ -20,9 +20,9 @@ public class GroupsTemplate extends JPanel {
 
 
 
-    public GroupsTemplate(ArrayList<Group> groups, MainWindow mainWindow) {
+    public GroupsTemplate( MainWindow mainWindow) {
         this.mainWindow = mainWindow;
-
+        groups = new ArrayList<>();
         this.rService = ResourceService.getService();
         this.groups = groups;
         lGrid = new GridBagLayout();
@@ -44,7 +44,7 @@ public class GroupsTemplate extends JPanel {
         lGrid.setConstraints(lTitulo, gbc);
         this.add(lTitulo);
 
-        this.crearProductos();
+
 
         this.setLayout(lGrid);
         this.setBackground(rService.getColorGrisClaro());
@@ -53,9 +53,16 @@ public class GroupsTemplate extends JPanel {
 
     }
 
-    private void crearProductos() {
+
+    public void crearProductos() {
         int numGroup = 0, fila = 1;
-        Group group = groups.get(numGroup);
+        Group group = null;
+        try {
+            group = groups.get(numGroup);
+        } catch (Exception e) {
+
+        }
+
         gbc.fill = GridBagConstraints.NONE;
         gbc.gridwidth = 1;
         gbc.insets.right = 0;
@@ -81,4 +88,11 @@ public class GroupsTemplate extends JPanel {
 
     }
 
+    public ArrayList<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
 }
