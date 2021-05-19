@@ -18,7 +18,7 @@ public class GroupTemplate extends JPanel {
     private GridBagConstraints gbc;
 
     private JButton btnGroup;
-    private JLabel lblImage;
+    private JLabel lblImage, lblGroup;
     private Image iCourses;
     private JLabel lblParrafo, lblTeacher;
     private MainWindow mainWindow;
@@ -38,7 +38,7 @@ public class GroupTemplate extends JPanel {
 
         this.createComponents();
 
-        this.setPreferredSize(new Dimension(240, 330));
+        this.setPreferredSize(new Dimension(262, 330));
         this.setBorder(rService.getbRedondeado());
         this.setBackground(Color.WHITE);
         this.setVisible(true);
@@ -51,10 +51,12 @@ public class GroupTemplate extends JPanel {
         iCourses = new ImageIcon("resource/images/fondoCursos.png").getImage();
         btnGroup = new JButton(group.getId());
         btnGroup.setCursor(rService.getcMano());
+        lblGroup = new JLabel("Grupo: ");
+        add(lblGroup);
         modificarGbc(0, 0, 3, 1, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0);
         this.add(btnGroup, gbc);
 
-        ImageIcon iAux = new ImageIcon(iCourses.getScaledInstance(230,160, Image.SCALE_SMOOTH));
+        ImageIcon iAux = new ImageIcon(iCourses.getScaledInstance(250,148, Image.SCALE_SMOOTH));
         lblImage = new JLabel();
         lblImage.setIcon(iAux);
         lblImage.setBorder(rService.getbRedondeado());
@@ -65,7 +67,7 @@ public class GroupTemplate extends JPanel {
         modificarGbc(0, 2, 3, 1, 2, 10, 10, 15, 10, 15, 0, 0, 0, 0);
         this.add(lblParrafo, gbc);
 
-        lblTeacher = new JLabel(group.getTeacher().getFirstName());
+        lblTeacher = new JLabel("Docente: "+group.getTeacher().getFirstName()+ " "+ group.getTeacher().getLastName());
         modificarGbc(0, 3, 1, 1, 0, 10, 10, 5, 15, 5, 10, 10, 0, 0);
         this.add(lblTeacher, gbc);
 

@@ -45,7 +45,7 @@ public class ResourceService {
     }
 
     private void createColors() {
-        this.colorMain = new Color(89, 129, 178);
+        this.colorMain = new Color(50, 40, 100);
         this.colorAlert = new Color(221, 79, 67);
         this.colorGrisClaro = new Color(247, 247, 247);
     }

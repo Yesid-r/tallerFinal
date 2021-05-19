@@ -1,5 +1,7 @@
 package view.panels;
 
+import view.HandlingEvents.HandlingEvents;
+import view.frames.MainWindow;
 import view.service.ResourceService;
 
 import javax.swing.*;
@@ -37,6 +39,7 @@ public class PanelNavigationT extends JPanel {
         ImageIcon iAux = new ImageIcon(iUser.getScaledInstance(90,90, Image.SCALE_SMOOTH));
         lblIconUser.setIcon(iAux);
         descUser = new JLabel("Usuario");
+        descUser.setForeground(Color.WHITE);
         btnCourses = new JButton("Mis cursos");
         iAux = new ImageIcon(iCourses.getScaledInstance(20,20, Image.SCALE_SMOOTH));
         btnCourses.setIcon(iAux);
@@ -101,5 +104,19 @@ public class PanelNavigationT extends JPanel {
         btnCloseSession.setBorder(null);
 
          */
+    }
+    public void assignHandlingEvents(MainWindow mainWindow){
+        btnCourses.setActionCommand(HandlingEvents.CURSOS);
+        btnCourses.addActionListener(new HandlingEvents(mainWindow));
+
+        btnStudents.setActionCommand(HandlingEvents.STUDENTS);
+        btnStudents.addActionListener(new HandlingEvents(mainWindow));
+
+        btnCloseSession.setActionCommand(HandlingEvents.CLOSE_SESSION);
+        btnCloseSession.addActionListener(new HandlingEvents(mainWindow));
+    }
+
+    public JLabel getDescUser() {
+        return descUser;
     }
 }

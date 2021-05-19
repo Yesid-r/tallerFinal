@@ -13,7 +13,7 @@ public class PanelImage extends JPanel {
     }
 
     private void preInit() {
-        fondo = new ImageIcon("resource/images/imagenLogin.png").getImage();
+        fondo = new ImageIcon("resource/images/fondoLogin.png").getImage();
     }
 
     private void initComponents() {
