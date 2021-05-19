@@ -1,6 +1,7 @@
 package model;
 
-import persistencia.ServiceTeachers;
+import persistencia.ServicePersistence;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,22 +11,25 @@ public class Management {
     private ArrayList<Teacher> teachers;
     private ArrayList<Group> groups;
     private ArrayList<Subject> subjects;
-    private ServiceTeachers serviceTeachers;
+    private ServicePersistence servicePersistence;
 
     public Management() {
         students = new ArrayList<>();
         teachers = new ArrayList<>();
         groups = new ArrayList<>();
         subjects = new ArrayList<>();
-        serviceTeachers = new ServiceTeachers();
+        servicePersistence = new ServicePersistence();
         loadData();
     }
     public void dumpObjects(ArrayList<Teacher> teachers){
-        serviceTeachers.dumpTeachers(teachers);
+
+        servicePersistence.dumpTeachers(teachers);
     }
     public void loadData(){
-        teachers.addAll(serviceTeachers.getTeachers());
+        teachers.addAll(servicePersistence.getTeachers());
+
     }
+
     public boolean addStudent(String id, String firstName, String lastName, String user, String password){
         if (findStudent(id) == -1){
             students.add(new Student(id,firstName,lastName,user,password));

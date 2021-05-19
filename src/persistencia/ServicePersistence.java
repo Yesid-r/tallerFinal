@@ -5,10 +5,10 @@ import model.Teacher;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ServiceTeachers {
+public class ServicePersistence {
     private FileJsonTeacher fileJsonTeacher;
 
-    public ServiceTeachers() {
+    public ServicePersistence() {
         this.fileJsonTeacher = new FileJsonTeacher();
         fileJsonTeacher.setPathFile("resource/files/");
         fileJsonTeacher.setNameFile("teachers.json");

@@ -13,14 +13,31 @@ public class ResourceService {
     private Border bCircular, bRedondeado, bDifuminado, bGris;
     private static ResourceService servicio;
     private GraficosAvanzadosService sGraficosAvanzados;
-
+    private Cursor cMano;
+    private JScrollPane panelScroll;
     private ResourceService(){
 
     sGraficosAvanzados = new GraficosAvanzadosService().getService();
     this.createColors();
     this.crearFuentes();
     this.crearBordes();
+    cMano = new Cursor(Cursor.HAND_CURSOR);
         
+    }
+
+    public JScrollPane construirPanelBarra(
+            Component componente, int x, int y, int ancho, int alto, Color color, Border borde
+    ){
+        panelScroll=new JScrollPane(componente);
+        panelScroll.setSize(ancho, alto);
+        panelScroll.setLocation(x, y);
+        panelScroll.getViewport().setBackground(color);
+        panelScroll.setBorder(borde);
+        return panelScroll;
+    }
+
+    public Cursor getcMano() {
+        return cMano;
     }
 
     public Font getFontTProducto() {
@@ -30,7 +47,7 @@ public class ResourceService {
     private void createColors() {
         this.colorMain = new Color(89, 129, 178);
         this.colorAlert = new Color(221, 79, 67);
-        colorGrisClaro = new Color(247, 247, 247);
+        this.colorGrisClaro = new Color(247, 247, 247);
     }
 
     public static ResourceService getService() {
@@ -52,7 +69,7 @@ public class ResourceService {
        // bInferiorGris = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.LIGHT_GRAY);
        bGris = BorderFactory.createLineBorder(Color.LIGHT_GRAY, 2, true);
         //bAzul = BorderFactory.createLineBorder(colorPrincipal, 2, true);
-        //bCircular = sGraficosAvanzados.DibujarBordeCircular(null, false, false, null);
+        bCircular = sGraficosAvanzados.DibujarBordeCircular(null, false, false, null);
         bRedondeado = sGraficosAvanzados.DibujarBordeRedondeado(null, 45, false, false, null);
         bDifuminado = sGraficosAvanzados.devolverBordeDifuminado(new Color(215, 215, 215), 8);
     }
