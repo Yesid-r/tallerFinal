@@ -1,0 +1,157 @@
+[
+  {
+    "id": "12345",
+    "firstName": "Eden",
+    "lastName": "Hazard",
+    "user": "ehazard@hotmail.com",
+    "password": "edhazard",
+    "average": 0.0,
+    "groups": [
+      {
+        "id": "80",
+        "teacher": {
+          "id": "123",
+          "firstName": "Juan",
+          "lastName": "Perez",
+          "user": "jperez@gmail.com",
+          "password": "1234",
+          "groups": []
+        },
+        "subject": {
+          "id": "60",
+          "description": "Programación II",
+          "numberCredits": 4
+        },
+        "students": [],
+        "activities": [],
+        "score": 0.0
+      }
+    ]
+  },{
+  "id": "1236",
+  "firstName": "Paula",
+  "lastName": "Torres",
+  "user": "pTorres@hotmail.com",
+  "password": "123456",
+  "average": 0.0,
+  "groups": []
+  },
+  {
+    "id": "1237",
+    "firstName": "Javier",
+    "lastName": "Ruiz",
+    "user": "jRuiz@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1238",
+    "firstName": "Juan",
+    "lastName": "Albarracin",
+    "user": "jAlbarracin@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1239",
+    "firstName": "Alejandra",
+    "lastName": "Fernandez",
+    "user": "aleja@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1240",
+    "firstName": "Karen",
+    "lastName": "Tibaduiza",
+    "user": "karen@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1241",
+    "firstName": "Sebastian",
+    "lastName": "Torres",
+    "user": "sTorres@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1242",
+    "firstName": "Jairo",
+    "lastName": "Cabrera",
+    "user": "jCabrera@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1243",
+    "firstName": "Santiago",
+    "lastName": "Rusinque",
+    "user": "santi@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1244",
+    "firstName": "Daniela",
+    "lastName": "Torres",
+    "user": "dTorres@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1245",
+    "firstName": "Laura",
+    "lastName": "Fernandez",
+    "user": "lFer@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1246",
+    "firstName": "Mauricio",
+    "lastName": "Torres",
+    "user": "mau@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1247",
+    "firstName": "Camilo",
+    "lastName": "Avila",
+    "user": "camilo@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1248",
+    "firstName": "Diego",
+    "lastName": "Molano",
+    "user": "diego@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  },
+  {
+    "id": "1249",
+    "firstName": "Eduard",
+    "lastName": "Torres",
+    "user": "edu@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "groups": []
+  }
+
+]

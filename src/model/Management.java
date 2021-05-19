@@ -21,6 +21,11 @@ public class Management {
         servicePersistence = new ServicePersistence();
         loadData();
     }
+
+    public ServicePersistence getServicePersistence() {
+        return servicePersistence;
+    }
+
     public void dumpObjects(ArrayList<Teacher> teachers){
 
         servicePersistence.dumpTeachers(teachers);

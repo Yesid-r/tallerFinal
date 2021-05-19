@@ -1,0 +1,21 @@
+[
+  {
+    "id": "80",
+    "teacher": {
+      "id": "123",
+      "firstName": "Juan",
+      "lastName": "Perez",
+      "user": "jperez@gmail.com",
+      "password": "1234",
+      "groups": []
+    },
+    "subject": {
+      "id": "60",
+      "description": "Programación II",
+      "numberCredits": 4
+    },
+    "students": [],
+    "activities": [],
+    "score": 0.0
+  }
+]

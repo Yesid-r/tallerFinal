@@ -16,7 +16,7 @@ public class Teacher {
         this.lastName = lastName;
         this.user = user;
         this.password = password;
-        groups = new ArrayList<>();
+        groups = new ArrayList<Group>();
     }
 
 

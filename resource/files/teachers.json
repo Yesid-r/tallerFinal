@@ -5,6 +5,74 @@
     "lastName": "Perez",
     "user": "jperez@gmail.com",
     "password": "1234",
+    "groups": [
+      {
+        "id": "80",
+        "teacher": {
+          "id": "123",
+          "firstName": "Juan",
+          "lastName": "Perez",
+          "user": "jperez@gmail.com",
+          "password": "1234",
+          "groups": []
+        },
+        "subject": {
+          "id": "60",
+          "description": "Programación II",
+          "numberCredits": 4
+        },
+        "students": [],
+        "activities": [],
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "id": "124",
+    "firstName": "Vinícius ",
+    "lastName": "Júnior",
+    "user": "vJunior@gmail.com",
+    "password": "1234",
+    "groups": []
+  },
+  {
+    "id": "125",
+    "firstName": "Gareth",
+    "lastName": "Bale",
+    "user": "gBale@gmail.com",
+    "password": "1234",
+    "groups": []
+  },
+  {
+    "id": "126",
+    "firstName": "Thomas ",
+    "lastName": "Lemar",
+    "user": "tLemar@gmail.com",
+    "password": "1234",
+    "groups": []
+  },
+  {
+    "id": "127",
+    "firstName": "Diego ",
+    "lastName": "Costa",
+    "user": "dCosta@gmail.com",
+    "password": "1234",
+    "groups": []
+  },
+  {
+    "id": "128",
+    "firstName": "Lucas ",
+    "lastName": "Pérez",
+    "user": "lPerez@gmail.com",
+    "password": "1234",
+    "groups": []
+  },
+  {
+    "id": "129",
+    "firstName": "Carlos",
+    "lastName": "Fernandez",
+    "user": "cFernandez@gmail.com",
+    "password": "1234",
     "groups": []
   }
 ]

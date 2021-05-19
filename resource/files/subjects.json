@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "description": "Algoritos y Programación",
+    "numberCredits": 4
+  },
+  {
+    "id": "2",
+    "description": "Programación I",
+    "numberCredits": 4
+  },
+  {
+    "id": "3",
+    "description": "Programación II",
+    "numberCredits": 4
+  },{
+  "id": "4",
+  "description": "Programación III",
+  "numberCredits": 4
+  },{
+  "id": "5",
+  "description": "Cálculo I",
+  "numberCredits": 4
+  },
+  {
+    "id": "6",
+    "description": "Cálculo II",
+    "numberCredits": 3
+  },
+  {
+    "id": "7",
+    "description": "Cálculo III",
+    "numberCredits": 3
+  },
+  {
+    "id": "8",
+    "description": "Cálculo IV",
+    "numberCredits": 3
+  },
+  {
+    "id": "9",
+    "description": "Ecuaciones diferenciales",
+    "numberCredits": 4
+  },
+  {
+    "id": "10",
+    "description": "Física I",
+    "numberCredits": 4
+  },
+  {
+    "id": "11",
+    "description": "Física II",
+    "numberCredits": 4
+  },
+  {
+    "id": "12",
+    "description": "Física III",
+    "numberCredits": 4
+  },
+  {
+    "id": "13",
+    "description": "Bases de datos I",
+    "numberCredits": 4
+  },
+  {
+    "id": "14",
+    "description": "Bases de datos II",
+    "numberCredits": 4
+  },
+  {
+    "id": "15",
+    "description": "Programación II",
+    "numberCredits": 4
+  },
+  {
+    "id": "16",
+    "description": "Electrónica general",
+    "numberCredits": 4
+  }
+]
