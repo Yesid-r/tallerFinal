@@ -11,31 +11,36 @@ public class Management {
     private ArrayList<Teacher> teachers;
     private ArrayList<Group> groups;
     private ArrayList<Subject> subjects;
-    private ServicePersistence servicePersistence;
+    //private ServicePersistence servicePersistence;
 
     public Management() {
         students = new ArrayList<>();
         teachers = new ArrayList<>();
         groups = new ArrayList<>();
         subjects = new ArrayList<>();
-        servicePersistence = new ServicePersistence();
-        loadData();
+       // servicePersistence = new ServicePersistence();
+       // loadData();
     }
 
-    public ServicePersistence getServicePersistence() {
-        return servicePersistence;
-    }
-
+    //public ServicePersistence getServicePersistence() {
+        //return servicePersistence;
+    //}
+/*
     public void dumpObjects(ArrayList<Teacher> teachers){
 
         servicePersistence.dumpTeachers(teachers);
     }
+
+ */
+    /*
     public void loadData(){
         teachers.addAll(servicePersistence.getTeachers());
         students.addAll(servicePersistence.getStudents());
         groups.addAll(servicePersistence.getGroups());
 
     }
+
+     */
 
     public boolean addStudent(String id, String firstName, String lastName, String user, String password){
         if (findStudent(id) == -1){

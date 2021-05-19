@@ -36,6 +36,7 @@ public class HandlingEvents implements ActionListener {
 
             if (control.verifyUser(data)) {
                 if (data[2].equals(String.valueOf(TypeUsers.Docente))) {
+                    System.out.println( control.getManagement().getGroups().size());
                     groupsTemplate = new GroupsTemplate(mainWindow);
                     groupsTemplate.setGroups(control.getManagement().getTeachers().get(posUser).getGroups());
                     groupsTemplate.crearProductos();

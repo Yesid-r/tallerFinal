@@ -2,15 +2,31 @@ package control;
 
 import model.Group;
 import model.Management;
+import persistencia.ServicePersistence;
 import view.service.TypeUsers;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Control {
     private Management management;
+    private ServicePersistence servicePersistence;
 
     public Control() {
         this.management = new Management();
+        servicePersistence = new ServicePersistence();
+        loadData();
+        createGroups();
+        //servicePersistence.dumpTeachers(management.getTeachers());
+
+
+    }
+
+
+
+    public void loadData(){
+        this.management.getTeachers().addAll(servicePersistence.getTeachers());
+        this.management.getSubjects().addAll(servicePersistence.getSubjects());
     }
     public boolean verifyUser(String[]data){
         switch (data[2]){
@@ -72,5 +88,11 @@ public class Control {
 
         }
         return -1;
+    }
+
+    public void createGroups(){
+        management.addGroup("90","124","2");
+        management.addGroup("61","123","1");
+        management.addGroup("13","123","3");
     }
 }

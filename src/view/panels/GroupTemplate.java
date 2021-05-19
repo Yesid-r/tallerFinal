@@ -48,7 +48,7 @@ public class GroupTemplate extends JPanel {
 
     }
     public void createComponents(){
-        iCourses = new ImageIcon("resource/images/fondoCursos.png").getImage();
+        iCourses = new ImageIcon("resource/images/programación.jpg").getImage();
         btnGroup = new JButton(group.getId());
         btnGroup.setCursor(rService.getcMano());
         lblGroup = new JLabel("Grupo: ");
