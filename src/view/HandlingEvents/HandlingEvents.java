@@ -16,6 +16,9 @@ public class HandlingEvents implements ActionListener {
     public static final String CURSOS = "cursos";
     public static final String STUDENTS = "lista de estudiantes";
     public static final String CLOSE_SESSION = "cerrar sesion";
+    public static final String NOTES = "calificaciones estudiante";
+    public static final String CURSOS_STUDENT = "cursos del estudiante";
+    public static final String SAVE_NOTES = "Guardar notas";
     private  MainWindow mainWindow;
     private Control control;
     private GroupsTemplate groupsTemplate;

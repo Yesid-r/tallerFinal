@@ -66,16 +66,18 @@ public class MainWindow extends JFrame {
 
     private void addComponents() {
 
-    // add(panelImage,BorderLayout.CENTER);
-     //add(panelLogin, BorderLayout.EAST);
+     add(panelImage,BorderLayout.CENTER);
+     add(panelLogin, BorderLayout.EAST);
         //add(panelManageActivity, BorderLayout.CENTER);
-        Teacher teacher = new Teacher("12","juan","pepe","user","password");
+        /*Teacher teacher = new Teacher("12","juan","pepe","user","password");
         teacher.getEnrolments().add(new Enrolment("12","12"));
         teacher.getEnrolments().get(0).getActivities().add(new Activity("Jm", LocalDate.now(), LocalDate.now(), TypeActivity.Evaluación));
 
         ActivityTemplate activityTemplate = new ActivityTemplate(this);
         activityTemplate.createActivityTeacher(teacher,0,0);
         add(activityTemplate,BorderLayout.SOUTH);
+
+         */
 
 
     }
