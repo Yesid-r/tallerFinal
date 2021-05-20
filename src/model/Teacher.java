@@ -8,7 +8,8 @@ public class Teacher {
     private String lastName;
     private String user;
     private String password;
-    private ArrayList<Enrolment> enrolments;
+    //private ArrayList<Enrolment> enrolments;
+    private ArrayList<Group> groups;
 
     public Teacher(String id, String firstName, String lastName, String user, String password) {
         this.id = id;
@@ -16,14 +17,31 @@ public class Teacher {
         this.lastName = lastName;
         this.user = user;
         this.password = password;
-        enrolments = new ArrayList<Enrolment>();
+        groups = new ArrayList<>();
+
 
     }
+    public boolean addGroup(Group group){
+        for (int i = 0; i < groups.size(); i++) {
+            if (!group.getId().equals(groups.get(i).getId())){
+                groups.add(group);
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public int findGroup(String idGroup){
+        for (int i = 0; i < groups.size(); i++) {
+            if (groups.get(i).getId().equals(idGroup)){
+                return i;
+            }
+        }
+        return -1;
+    }
 
-    public ArrayList<Enrolment> getEnrolments() {
-        System.out.println("enr"+ enrolments.size());
-        return enrolments;
+    public ArrayList<Group> getGroups() {
+        return groups;
     }
 
     public String getId() {

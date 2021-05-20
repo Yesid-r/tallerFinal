@@ -47,7 +47,7 @@ public class GroupsTemplate extends JPanel {
 
 
         this.setLayout(lGrid);
-        this.setBackground(rService.getColorGrisClaro());
+        this.setBackground(Color.LIGHT_GRAY);
         this.setVisible(true);
 
 

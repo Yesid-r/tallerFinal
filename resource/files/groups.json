@@ -8,7 +8,13 @@
       "description": "Algoritos y Programación",
       "numberCredits": 4
     },
-    "enrolments": [],
+    "enrolments": [{
+      "idInscription": "12345-1",
+      "idGroup": "1",
+      "idStudent": "12345",
+      "score": 0.0,
+      "activities": []
+    }],
     "activities": [],
     "score": 0.0
   },
@@ -21,7 +27,13 @@
       "description": "Programación II",
       "numberCredits": 4
     },
-    "enrolments": [],
+    "enrolments": [{
+      "idInscription": "12345-2",
+      "idGroup": "2",
+      "idStudent": "12345",
+      "score": 0.0,
+      "activities": []
+    }],
     "activities": [],
     "score": 0.0
   },
@@ -34,7 +46,32 @@
       "description": "Programación III",
       "numberCredits": 4
     },
-    "enrolments": [],
+    "enrolments": [{
+      "idInscription": "12345-3",
+      "idGroup": "3",
+      "idStudent": "12345",
+      "score": 0.0,
+      "activities": []
+    }],
+    "activities": [],
+    "score": 0.0
+  },
+  {
+    "id": "4",
+    "idTeacher": "123",
+    "nameTeacher": "Juan Perez",
+    "subject": {
+      "id": "6",
+      "description": "Cálculo II",
+      "numberCredits": 3
+    },
+    "enrolments": [{
+      "idInscription": "12345-4",
+      "idGroup": "4",
+      "idStudent": "12345",
+      "score": 0.0,
+      "activities": []
+    }],
     "activities": [],
     "score": 0.0
   }

@@ -31,10 +31,12 @@ public class ActivityTemplate extends JPanel{
         lblIconAct.setIcon(iAux);
         this.add(lblIconAct);
         add(new JLabel("descripcion de la actividad: "));
-        btnDescAct = new JButton( teacher.getEnrolments().get(pos).getActivities().get(posAct).getDescription());
+        //btnDescAct = new JButton( teacher.getEnrolments().get(pos).getActivities().get(posAct).getDescription());
+        btnDescAct = new JButton(teacher.getGroups().get(pos).getActivities().get(posAct).getDescription());
         this.add(btnDescAct);
         this.add(new JLabel("Fecha de entrega:"));
-        lblDateEnd = new JLabel(""+teacher.getEnrolments().get(pos).getActivities().get(posAct).getDateEnd());
+        //lblDateEnd = new JLabel(""+teacher.getEnrolments().get(pos).getActivities().get(posAct).getDateEnd());
+        lblDateEnd = new JLabel(""+ teacher.getGroups().get(pos).getActivities().get(posAct).getDateEnd());
         this.add(lblDateEnd);
     }
 }

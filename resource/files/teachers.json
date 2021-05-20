@@ -5,13 +5,58 @@
     "lastName": "Perez",
     "user": "jperez@gmail.com",
     "password": "1234",
-    "enrolments": [
+    "groups": [
       {
-        "idInscription": "123-1",
-        "idGroup": "1",
-        "idStudent": "123",
-        "score": 0.0,
-        "activities": []
+        "id": "1",
+        "idTeacher": "123",
+        "nameTeacher": "Juan Perez",
+        "subject": {
+          "id": "1",
+          "description": "Algoritos y Programación",
+          "numberCredits": 4
+        },
+        "enrolments": [],
+        "activities": [],
+        "score": 0.0
+      },
+      {
+        "id": "2",
+        "idTeacher": "123",
+        "nameTeacher": "Juan Perez",
+        "subject": {
+          "id": "3",
+          "description": "Programación II",
+          "numberCredits": 4
+        },
+        "enrolments": [],
+        "activities": [],
+        "score": 0.0
+      },
+      {
+        "id": "3",
+        "idTeacher": "123",
+        "nameTeacher": "Juan Perez",
+        "subject": {
+          "id": "4",
+          "description": "Programación III",
+          "numberCredits": 4
+        },
+        "enrolments": [],
+        "activities": [],
+        "score": 0.0
+      },
+      {
+        "id": "4",
+        "idTeacher": "123",
+        "nameTeacher": "Juan Perez",
+        "subject": {
+          "id": "6",
+          "description": "Cálculo II",
+          "numberCredits": 3
+        },
+        "enrolments": [],
+        "activities": [],
+        "score": 0.0
       }
     ]
   },
@@ -21,7 +66,7 @@
     "lastName": "Júnior",
     "user": "vJunior@gmail.com",
     "password": "1234",
-    "enrolments": []
+    "groups": []
   },
   {
     "id": "125",
@@ -29,7 +74,7 @@
     "lastName": "Bale",
     "user": "gBale@gmail.com",
     "password": "1234",
-    "enrolments": []
+    "groups": []
   },
   {
     "id": "126",
@@ -37,7 +82,7 @@
     "lastName": "Lemar",
     "user": "tLemar@gmail.com",
     "password": "1234",
-    "enrolments": []
+    "groups": []
   },
   {
     "id": "127",
@@ -45,7 +90,7 @@
     "lastName": "Costa",
     "user": "dCosta@gmail.com",
     "password": "1234",
-    "enrolments": []
+    "groups": []
   },
   {
     "id": "128",
@@ -53,7 +98,7 @@
     "lastName": "Pérez",
     "user": "lPerez@gmail.com",
     "password": "1234",
-    "enrolments": []
+    "groups": []
   },
   {
     "id": "129",
@@ -61,6 +106,6 @@
     "lastName": "Fernandez",
     "user": "cFernandez@gmail.com",
     "password": "1234",
-    "enrolments": []
+    "groups": []
   }
 ]

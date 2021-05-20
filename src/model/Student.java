@@ -23,6 +23,16 @@ public class Student {
         this.average = 0;
         enrolments = new ArrayList<>();
     }
+    public int findEnrolment(String id){
+        for (int i = 0; i < enrolments.size(); i++) {
+            if (enrolments.get(i).getIdInscription().equals(id)){
+                return i;
+            }
+
+        }
+        return -1;
+
+    }
 
 
 

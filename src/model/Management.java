@@ -55,30 +55,24 @@ public class Management {
         return -1;
     }
     public boolean addEnrolment(String idStudent, String idGroup, String idTeacher){
-        int posGroup = findGroup(idGroup);
         int posStudent = findStudent(idStudent);
+        int posGroup = findGroup(idGroup);
         int posTeacher = findTeacher(idTeacher);
         Enrolment enrolment = new Enrolment(idGroup,idStudent);
-        if (posGroup != -1 && posStudent != -1 && posTeacher !=-1){
-            getGroups().get(posGroup).getEnrolments().add(enrolment);
-            getStudents().get(posStudent).getEnrolments().add(enrolment);
-            enrolment = new Enrolment(enrolment.getIdGroup(),idTeacher);
-            if (findEnrolmentTeacher(enrolment.getIdInscription(),idTeacher) == -1) {
-                getTeachers().get(posTeacher).getEnrolments().add(enrolment);
-            }
-            return  true;
-        }
-        return false;
-    }
-    public int findEnrolmentTeacher(String idInscription, String idTeacher){
-        for (int i = 0; i < getTeachers().get(findTeacher(idTeacher)).getEnrolments().size(); i++) {
-            if (getTeachers().get(findTeacher(idTeacher)).getEnrolments().get(i).getIdInscription().equals(idInscription)){
-                return i;
+        if (posGroup != -1 && posStudent!= -1 && posTeacher !=-1){
+            if (students.get(posStudent).findEnrolment(enrolment.getIdInscription()) ==-1 ){
+                groups.get(posGroup).getEnrolments().add(enrolment);
+                System.out.println("pos inscripción: "+ students.get(posStudent).findEnrolment(idStudent));
+                students.get(posStudent).getEnrolments().add(enrolment);
+                System.out.println("añadiendo grupo al docente"+teachers.get(posTeacher).addGroup(groups.get(posGroup)));
+
+                return true;
 
             }
         }
-        return -1;
+       return false;
     }
+
     public int findTeacher(String id){
         for (int i = 0; i < teachers.size(); i++) {
             if (teachers.get(i).getId().equals(id)){
