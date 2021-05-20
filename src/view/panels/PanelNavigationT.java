@@ -41,7 +41,7 @@ public class PanelNavigationT extends JPanel {
         descUser = new JLabel("Usuario");
         descUser.setForeground(Color.WHITE);
         btnCourses = new JButton("Mis cursos");
-        iAux = new ImageIcon(iCourses.getScaledInstance(20,20, Image.SCALE_SMOOTH));
+        iAux = new ImageIcon(iCourses.getScaledInstance(30,30, Image.SCALE_SMOOTH));
         btnCourses.setIcon(iAux);
         btnCourses.setHorizontalAlignment(SwingConstants.LEFT);
         btnCourses.setForeground(Color.WHITE);
@@ -49,14 +49,14 @@ public class PanelNavigationT extends JPanel {
 
 
         btnStudents = new JButton("Estudiantes: ");
-        iAux = new ImageIcon(iStudents.getScaledInstance(20,20,Image.SCALE_SMOOTH));
+        iAux = new ImageIcon(iStudents.getScaledInstance(30,30,Image.SCALE_SMOOTH));
         btnStudents.setIcon(iAux);
         btnStudents.setHorizontalAlignment(SwingConstants.LEFT);
         btnStudents.setForeground(Color.WHITE);
         btnStudents.setContentAreaFilled(false);
 
         btnCloseSession = new JButton("Cerrar sesión");
-        iAux = new ImageIcon(iCloseSession.getScaledInstance(20,20,Image.SCALE_SMOOTH));
+        iAux = new ImageIcon(iCloseSession.getScaledInstance(30,30,Image.SCALE_SMOOTH));
         btnCloseSession.setIcon(iAux);
         btnCloseSession.setHorizontalAlignment(SwingConstants.LEFT);
         btnCloseSession.setForeground(Color.WHITE);

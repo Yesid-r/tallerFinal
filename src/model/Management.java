@@ -11,7 +11,7 @@ public class Management {
     private ArrayList<Teacher> teachers;
     private ArrayList<Group> groups;
     private ArrayList<Subject> subjects;
-    //private ServicePersistence servicePersistence;
+
 
     public Management() {
         students = new ArrayList<>();
@@ -21,26 +21,6 @@ public class Management {
        // servicePersistence = new ServicePersistence();
        // loadData();
     }
-
-    //public ServicePersistence getServicePersistence() {
-        //return servicePersistence;
-    //}
-/*
-    public void dumpObjects(ArrayList<Teacher> teachers){
-
-        servicePersistence.dumpTeachers(teachers);
-    }
-
- */
-    /*
-    public void loadData(){
-        teachers.addAll(servicePersistence.getTeachers());
-        students.addAll(servicePersistence.getStudents());
-        groups.addAll(servicePersistence.getGroups());
-
-    }
-
-     */
 
     public boolean addStudent(String id, String firstName, String lastName, String user, String password){
         if (findStudent(id) == -1){
@@ -56,46 +36,7 @@ public class Management {
         }
         return false;
     }
-    public boolean addGroup(String id, String idTeacher, String idSubject){
-        if (findTeacher(idTeacher) != -1 && findSubject(idSubject) != -1){
-            groups.add(new Group(id, teachers.get(findTeacher(idTeacher)), subjects.get(findSubject(idSubject)) ));
-            return true;
-        }
 
-        return false;
-    }
-    public boolean addActivity(String description, LocalDate dateStart, LocalDate dateEnd, TypeActivity typeActivity,String idGroup){
-        int posGroup = findGroup(idGroup);
-        if (posGroup != -1){
-            if (groups.get(posGroup).findActivity(description) == false){
-
-                // groups.get(posGroup).assignActivity(new Activity(description, dateStart,dateEnd,typeActivity,groups.get(posGroup)));
-                for (int i = 0; i < groups.get(posGroup).getStudents().size(); i++) {
-                    groups.get(posGroup).getStudents().get(i).getGroups().get(findGroup(idGroup)).addActivity(new Activity(description, dateStart,dateEnd,typeActivity,groups.get(posGroup)));
-                    System.out.println("pos:"+i);
-
-                }
-                return true;
-            }
-
-        }
-
-    return false;
-    }
-    public boolean addScore(String idGroup, String idStudent, String descriptionActivity, double score){
-
-       int posStudent = findStudent(idStudent);
-       int posGroup = findGroup(idGroup);
-       if (groups.get(posGroup).findStudent(idStudent)!=-1){
-       students.get(posStudent).getGroups().get(findGroup(idGroup)).getActivities().get(students.get(posStudent).findActivity(idGroup,descriptionActivity)).setScore(score);
-       return true;
-       }
-
-
-
-
-        return false;
-    }
     public  int findGroup(String id){
         for (int i = 0; i < groups.size(); i++) {
             if (groups.get(i).getId().equals(id)){
@@ -110,6 +51,31 @@ public class Management {
                 return i;
             }
 
+        }
+        return -1;
+    }
+    public boolean addEnrolment(String idStudent, String idGroup, String idTeacher){
+        int posGroup = findGroup(idGroup);
+        int posStudent = findStudent(idStudent);
+        int posTeacher = findTeacher(idTeacher);
+        Enrolment enrolment = new Enrolment(idGroup,idStudent);
+        if (posGroup != -1 && posStudent != -1 && posTeacher !=-1){
+            getGroups().get(posGroup).getEnrolments().add(enrolment);
+            getStudents().get(posStudent).getEnrolments().add(enrolment);
+            enrolment = new Enrolment(enrolment.getIdGroup(),idTeacher);
+            if (findEnrolmentTeacher(enrolment.getIdInscription(),idTeacher) == -1) {
+                getTeachers().get(posTeacher).getEnrolments().add(enrolment);
+            }
+            return  true;
+        }
+        return false;
+    }
+    public int findEnrolmentTeacher(String idInscription, String idTeacher){
+        for (int i = 0; i < getTeachers().get(findTeacher(idTeacher)).getEnrolments().size(); i++) {
+            if (getTeachers().get(findTeacher(idTeacher)).getEnrolments().get(i).getIdInscription().equals(idInscription)){
+                return i;
+
+            }
         }
         return -1;
     }

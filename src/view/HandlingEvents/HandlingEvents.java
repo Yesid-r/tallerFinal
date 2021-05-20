@@ -28,17 +28,23 @@ public class HandlingEvents implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-    switch (e.getActionCommand()){
-        case LOGIN: {
-            String[] data = mainWindow.captureDate(LOGIN);
-            String user = control.findNameUser(data[0], data[2]);
-            int posUser = control.findUser(data[0]);
+        String userGlobal = "";
+        String typeUser = "";
+        switch (e.getActionCommand()){
+
+
+        case LOGIN:
+        String [] data = mainWindow.captureDate(LOGIN);
+
+            userGlobal = data[0];
+            typeUser = data[2];
 
             if (control.verifyUser(data)) {
+                String user = control.findNameUser(data[0], data[2]);
                 if (data[2].equals(String.valueOf(TypeUsers.Docente))) {
-                    System.out.println( control.getManagement().getGroups().size());
                     groupsTemplate = new GroupsTemplate(mainWindow);
-                    groupsTemplate.setGroups(control.getManagement().getTeachers().get(posUser).getGroups());
+                    System.out.println("tamaño:" +control.groupsTeacher(data[0]).size());
+                    groupsTemplate.setGroups(control.groupsTeacher(data[0]));
                     groupsTemplate.crearProductos();
                     mainWindow.setGroupsTemplate(groupsTemplate);
                     mainWindow.disablePanels(data[2]);
@@ -46,12 +52,29 @@ public class HandlingEvents implements ActionListener {
                     mainWindow.getPanelNavigationT().getDescUser().setText(user);
 
 
+                }else if (data[2].equals(String.valueOf(TypeUsers.Estudiante))){
+                    groupsTemplate = new GroupsTemplate(mainWindow);
+                    groupsTemplate.setGroups(control.groupsStudent(data[0]));
+                    groupsTemplate.crearProductos();
+                    mainWindow.setGroupsTemplate(groupsTemplate);
+
+                    //pendiente disable y enable panels y añadir panel de navegación del estudiante.
+
                 }
+            }else {
+                //Joption con advertencia usuario o contraseña incorrecto.
+                JOptionPane.showMessageDialog(null,"Algo quedo mal");
             }
 
-        }
+
             break;
         case BTN_GROUP:
+            JButton btn = (JButton) e.getSource();
+            String idGroup = btn.getText();
+            if (typeUser.equals(String.valueOf(TypeUsers.Docente))){
+
+            }
+
             break;
         case CLOSE_SESSION:{
             mainWindow.disablePanels(CLOSE_SESSION);

@@ -1,5 +1,9 @@
 package view.frames;
 
+import model.Activity;
+import model.Enrolment;
+import model.Teacher;
+import model.TypeActivity;
 import view.HandlingEvents.HandlingEvents;
 import view.panels.*;
 import view.service.ResourceService;
@@ -7,6 +11,7 @@ import view.service.TypeUsers;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDate;
 
 public class MainWindow extends JFrame {
     private PanelLogin panelLogin;
@@ -18,6 +23,7 @@ public class MainWindow extends JFrame {
     private GroupsTemplate groupsTemplate;
     private JScrollPane scrollPane;
     private JPanel jPanel;
+    private PanelManageActivity panelManageActivity;
 
 
     public MainWindow() {
@@ -50,6 +56,7 @@ public class MainWindow extends JFrame {
         groupsTemplate = new GroupsTemplate(this);
         jPanel = new JPanel();
         jPanel.setLayout(new FlowLayout());
+        panelManageActivity = new PanelManageActivity();
 
     }
 
@@ -59,19 +66,39 @@ public class MainWindow extends JFrame {
 
     private void addComponents() {
 
-     add(panelImage,BorderLayout.CENTER);
-     add(panelLogin, BorderLayout.EAST);
+    // add(panelImage,BorderLayout.CENTER);
+     //add(panelLogin, BorderLayout.EAST);
+        //add(panelManageActivity, BorderLayout.CENTER);
+        Teacher teacher = new Teacher("12","juan","pepe","user","password");
+        teacher.getEnrolments().add(new Enrolment("12","12"));
+        teacher.getEnrolments().get(0).getActivities().add(new Activity("Jm", LocalDate.now(), LocalDate.now(), TypeActivity.Evaluación));
+
+        ActivityTemplate activityTemplate = new ActivityTemplate(this);
+        activityTemplate.createActivityTeacher(teacher,0,0);
+        add(activityTemplate,BorderLayout.SOUTH);
+
 
     }
     public void activePanel(String seccion){
         if (seccion.equals(String.valueOf(TypeUsers.Docente))){
+            this.setSize(1100,600);
+            setLocationRelativeTo(null);
             panelNavigationT.setVisible(true);
             add(panelNavigationT,BorderLayout.WEST);
             scrollPane = new JScrollPane(groupsTemplate);
             scrollPane.setVisible(true);
             add(scrollPane,BorderLayout.CENTER);
 
+        }else if (seccion.equals(String.valueOf(TypeUsers.Estudiante))){
+            this.setSize(1100,600);
+            setLocationRelativeTo(null);
+            scrollPane = new JScrollPane(groupsTemplate);
+            scrollPane.setVisible(true);
+            add(scrollPane, BorderLayout.CENTER);
+
         }else if(seccion.equals(HandlingEvents.CLOSE_SESSION)){
+            this.setSize(1000,500);
+            setLocationRelativeTo(null);
             panelImage.setVisible(true);
             panelLogin.setVisible(true);
             add(panelImage, BorderLayout.CENTER);
@@ -87,6 +114,14 @@ public class MainWindow extends JFrame {
             remove(panelImage);
             panelLogin.setVisible(false);
             remove(panelLogin);
+
+        }else if (seccion.equals(String.valueOf(TypeUsers.Estudiante))){
+
+            panelImage.setVisible(false);
+            remove(panelImage);
+            panelLogin.setVisible(false);
+            remove(panelLogin);
+
 
         }else if(seccion.equals(HandlingEvents.CLOSE_SESSION)){
             panelNavigationT.setVisible(false);
@@ -111,6 +146,17 @@ public class MainWindow extends JFrame {
 
         }
         return null;
+    }
+    public void messageError(String message){
+
+    }
+    public int messageConfirm(){
+        int confirmado = JOptionPane.showConfirmDialog(
+                null,
+                "¿Lo confirmas?");
+
+
+        return confirmado;
     }
 
     public PanelNavigationT getPanelNavigationT() {

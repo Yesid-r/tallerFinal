@@ -1,7 +1,6 @@
 package control;
 
-import model.Group;
-import model.Management;
+import model.*;
 import persistencia.ServicePersistence;
 import view.service.TypeUsers;
 
@@ -13,26 +12,33 @@ public class Control {
     private ServicePersistence servicePersistence;
 
     public Control() {
-        this.management = new Management();
-        servicePersistence = new ServicePersistence();
-        loadData();
-        createGroups();
-        //servicePersistence.dumpTeachers(management.getTeachers());
 
+        servicePersistence = new ServicePersistence();
+        this.management = new Management();
+        loadData();
 
     }
 
 
-
     public void loadData(){
+
+
         this.management.getTeachers().addAll(servicePersistence.getTeachers());
         this.management.getSubjects().addAll(servicePersistence.getSubjects());
+        this.management.getGroups().addAll(servicePersistence.getGroups());
+        this.management.getStudents().addAll(servicePersistence.getStudents());
+        management.addEnrolment("12345", "1","123");
+        servicePersistence.dumpTeachers(management.getTeachers());
+        servicePersistence.dumpStudents(management.getStudents());
+
+
     }
     public boolean verifyUser(String[]data){
         switch (data[2]){
             case "Docente":{
-                for (int i = 0; i < management.getTeachers().size(); i++) {
-                    if (management.getTeachers().get(i).getUser().equals(data[0]) && management.getTeachers().get(i).getPassword().equals(data[1])){
+                int posTeacher = findTeacherbyUser(data[0]);
+                if (posTeacher!= -1  ){
+                    if (management.getTeachers().get(posTeacher).getPassword().equals(data[1])){
                         return true;
                     }
                 }
@@ -51,36 +57,19 @@ public class Control {
     }
     public ArrayList<Group> groupsTeacher(String user){
         ArrayList<Group> groups = new ArrayList<>();
+        Teacher teacher = management.getTeachers().get(findTeacherbyUser(user));
         for (int i = 0; i < management.getGroups().size(); i++) {
-            if (management.getGroups().get(i).getTeacher().getUser().equals(user)){
-                groups.add(management.getGroups().get(i));
+            for (int j = 0; j < teacher.getEnrolments().size(); j++) {
+                if (management.getGroups().get(i).getId().equals(teacher.getEnrolments().get(j).getIdGroup())){
+
+                    groups.add(management.getGroups().get(i));
+                }
             }
 
         }
         return groups;
     }
-
-    public Management getManagement() {
-        return management;
-    }
-    public String findNameUser(String user, String typeUser){
-        if (typeUser.equals(String.valueOf(TypeUsers.Docente))){
-            for (int i = 0; i < management.getTeachers().size(); i++) {
-                if (management.getTeachers().get(i).getUser().equals(user)){
-                    return management.getTeachers().get(i).getFirstName();
-                }
-            }
-        }else if(typeUser.equals(String.valueOf(TypeUsers.Estudiante))){
-            for (int i = 0; i < management.getStudents().size(); i++) {
-                if (management.getStudents().get(i).getUser().equals(user)){
-                    return management.getStudents().get(i).getFirstName();
-                }
-            }
-
-        }
-        return "";
-    }
-    public int findUser(String user){
+    public int findTeacherbyUser(String user){
         for (int i = 0; i < management.getTeachers().size(); i++) {
             if (management.getTeachers().get(i).getUser().equals(user)){
                 return i;
@@ -89,10 +78,45 @@ public class Control {
         }
         return -1;
     }
+    public ArrayList<Group> groupsStudent(String user){
+        ArrayList<Group> groups = new ArrayList<>();
+        Student student = management.getStudents().get(findStudentByUser(user));
+        for (int i = 0; i < management.getGroups().size(); i++) {
+            for (int j = 0; j < student.getEnrolments().size(); j++) {
+                if (student.getEnrolments().get(j).getIdGroup().equals(management.getGroups().get(i).getId())){
+                groups.add(management.getGroups().get(i));
+                }
+            }
 
-    public void createGroups(){
-        management.addGroup("90","124","2");
-        management.addGroup("61","123","1");
-        management.addGroup("13","123","3");
+
+        }
+
+        return groups;
     }
+    public int findStudentByUser(String user){
+        for (int i = 0; i < management.getStudents().size(); i++) {
+            if (management.getStudents().get(i).getUser().equals(user)){
+                return i;
+            }
+
+        }
+        return -1;
+    }
+
+
+    public Management getManagement() {
+
+        return management;
+    }
+    public String findNameUser(String user, String typeUser){
+        if (typeUser.equals(String.valueOf(TypeUsers.Docente))){
+            return management.getTeachers().get(findTeacherbyUser(user)).getFirstName();
+        }else if(typeUser.equals(String.valueOf(TypeUsers.Estudiante))){
+            return management.getStudents().get(findStudentByUser(user)).getFirstName();
+        }
+        return "";
+    }
+
+
+
 }

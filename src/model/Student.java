@@ -10,7 +10,7 @@ public class Student {
     private String password;
 
     private double average;
-    private ArrayList<Group> groups;
+    private ArrayList<Enrolment> enrolments;
 
 
 
@@ -21,39 +21,9 @@ public class Student {
         this.user = user;
         this.password = password;
         this.average = 0;
-
-        groups = new ArrayList<Group>();
+        enrolments = new ArrayList<>();
     }
-    public int sumCredits(){
-        int sumCredits =0;
-        for (int i = 0; i < groups.size(); i++) {
-            sumCredits += groups.get(i).getSubject().getNumberCredits();
 
-        }
-        return sumCredits;
-    }
-    public double noteFinalGroups(){
-
-        return 0;
-    }
-    public int findActivity(String idGroup, String desActivity){
-        for (int i = 0; i < groups.get(findGroup(idGroup)).getActivities().size(); i++) {
-            if (groups.get(findGroup(idGroup)).getActivities().get(i).getDescription().equals(desActivity)){
-                return i;
-
-            }
-
-        }
-        return -1;
-    }
-    public int findGroup(String id){
-        for (int i = 0; i < groups.size(); i++) {
-            if (groups.get(i).getId().equals(id)){
-                return i;
-            }
-        }
-        return -1;
-    }
 
 
 
@@ -82,8 +52,7 @@ public class Student {
     }
 
 
-
-    public ArrayList<Group> getGroups() {
-        return groups;
+    public ArrayList<Enrolment> getEnrolments() {
+        return enrolments;
     }
 }

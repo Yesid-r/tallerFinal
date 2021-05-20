@@ -6,36 +6,305 @@
     "user": "ehazard@hotmail.com",
     "password": "edhazard",
     "average": 0.0,
-    "groups": [
+    "enrolments": [
       {
-        "id": "80",
-        "teacher": {
-          "id": "123",
-          "firstName": "Juan",
-          "lastName": "Perez",
-          "user": "jperez@gmail.com",
-          "password": "1234",
-          "groups": []
-        },
-        "subject": {
-          "id": "60",
-          "description": "Programación II",
-          "numberCredits": 4
-        },
-        "students": [],
-        "activities": [],
-        "score": 0.0
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
+      },
+      {
+        "idInscription": "12345-1",
+        "idGroup": "1",
+        "idStudent": "12345",
+        "score": 0.0,
+        "activities": []
       }
     ]
-  },{
-  "id": "1236",
-  "firstName": "Paula",
-  "lastName": "Torres",
-  "user": "pTorres@hotmail.com",
-  "password": "123456",
-  "average": 0.0,
-  "groups": []
-},
+  },
+  {
+    "id": "1236",
+    "firstName": "Paula",
+    "lastName": "Torres",
+    "user": "pTorres@hotmail.com",
+    "password": "123456",
+    "average": 0.0,
+    "enrolments": []
+  },
   {
     "id": "1237",
     "firstName": "Javier",
@@ -43,7 +312,7 @@
     "user": "jRuiz@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1238",
@@ -52,7 +321,7 @@
     "user": "jAlbarracin@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1239",
@@ -61,7 +330,7 @@
     "user": "aleja@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1240",
@@ -70,7 +339,7 @@
     "user": "karen@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1241",
@@ -79,7 +348,7 @@
     "user": "sTorres@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1242",
@@ -88,7 +357,7 @@
     "user": "jCabrera@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1243",
@@ -97,7 +366,7 @@
     "user": "santi@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1244",
@@ -106,7 +375,7 @@
     "user": "dTorres@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1245",
@@ -115,7 +384,7 @@
     "user": "lFer@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1246",
@@ -124,7 +393,7 @@
     "user": "mau@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1247",
@@ -133,7 +402,7 @@
     "user": "camilo@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1248",
@@ -142,7 +411,7 @@
     "user": "diego@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   },
   {
     "id": "1249",
@@ -151,7 +420,6 @@
     "user": "edu@hotmail.com",
     "password": "123456",
     "average": 0.0,
-    "groups": []
+    "enrolments": []
   }
-
 ]

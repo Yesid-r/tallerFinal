@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GroupTemplate extends JPanel {
-    private GroupComponent groupComponent;
+
     private ResourceService rService;
     private Group group;
 
@@ -27,8 +27,6 @@ public class GroupTemplate extends JPanel {
 
     public GroupTemplate(Group group, MainWindow mainWindow) {
         this.mainWindow = mainWindow;
-       // this.groupComponent = groupComponent;
-       // this.groupComponent.getClass();
         this.rService = ResourceService.getService();
         this.group = group;
 
@@ -44,6 +42,7 @@ public class GroupTemplate extends JPanel {
         this.setVisible(true);
         btnGroup.setActionCommand(HandlingEvents.BTN_GROUP);
         btnGroup.addActionListener(new HandlingEvents(mainWindow));
+        addObDecorates();
 
 
     }
@@ -52,9 +51,15 @@ public class GroupTemplate extends JPanel {
         btnGroup = new JButton(group.getId());
         btnGroup.setCursor(rService.getcMano());
         lblGroup = new JLabel("Grupo: ");
-        add(lblGroup);
+        JPanel panel = new JPanel(new FlowLayout());
+        lblGroup.setFont(rService.getFontMediana());
+        panel.setBackground(Color.WHITE);
+        panel.add(lblGroup);
+        panel.setBorder(rService.getbInferiorAzul());
+
         modificarGbc(0, 0, 3, 1, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0);
-        this.add(btnGroup, gbc);
+        panel.add(btnGroup);
+        this.add(panel, gbc);
 
         ImageIcon iAux = new ImageIcon(iCourses.getScaledInstance(250,148, Image.SCALE_SMOOTH));
         lblImage = new JLabel();
@@ -67,7 +72,7 @@ public class GroupTemplate extends JPanel {
         modificarGbc(0, 2, 3, 1, 2, 10, 10, 15, 10, 15, 0, 0, 0, 0);
         this.add(lblParrafo, gbc);
 
-        lblTeacher = new JLabel("Docente: "+group.getTeacher().getFirstName()+ " "+ group.getTeacher().getLastName());
+        lblTeacher = new JLabel("Docente: "+group.getNameTeacher());
         modificarGbc(0, 3, 1, 1, 0, 10, 10, 5, 15, 5, 10, 10, 0, 0);
         this.add(lblTeacher, gbc);
 
@@ -100,6 +105,14 @@ public class GroupTemplate extends JPanel {
         gbc.ipady = paddingY;
         gbc.weightx = estiramientoColumna;
         gbc.weighty = estiramientoFila;
+    }
+    public void addObDecorates(){
+        //lblGroup.setBorder(rService.getbInferiorAzul());
+        btnGroup.setFocusable(false);
+        //btnGroup.setBorder(rService.getbInferiorAzul());
+        btnGroup.setCursor(rService.getcMano());
+        btnGroup.setFont(rService.getFontMediana());
+        btnGroup.setBackground(Color.WHITE);
     }
 
 }

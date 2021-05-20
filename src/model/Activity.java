@@ -8,14 +8,12 @@ public class Activity {
     private LocalDate dateStart;
     private LocalDate dateEnd;
     private TypeActivity typeActivity;
-    private Group group;
     private double score;
 
-    public Activity(String description, LocalDate dateStar, LocalDate dateEnd, TypeActivity typeActivity,Group group) {
+    public Activity(String description, LocalDate dateStar, LocalDate dateEnd, TypeActivity typeActivity) {
         this.description = description;
         this.dateStart = dateStar;
         this.dateEnd = dateEnd;
-        this.group = group;
         this.typeActivity = typeActivity;
         this.score = 0;
     }
@@ -32,9 +30,7 @@ public class Activity {
         return score;
     }
 
-    public Group getGroup() {
-        return group;
-    }
+
 
     public LocalDate getDateEnd() {
         return dateEnd;

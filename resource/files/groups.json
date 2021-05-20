@@ -1,20 +1,40 @@
 [
   {
-    "id": "80",
-    "teacher": {
-      "id": "123",
-      "firstName": "Juan",
-      "lastName": "Perez",
-      "user": "jperez@gmail.com",
-      "password": "1234",
-      "groups": []
-    },
+    "id": "1",
+    "idTeacher": "123",
+    "nameTeacher": "Juan Perez",
     "subject": {
-      "id": "60",
+      "id": "1",
+      "description": "Algoritos y Programación",
+      "numberCredits": 4
+    },
+    "enrolments": [],
+    "activities": [],
+    "score": 0.0
+  },
+  {
+    "id": "2",
+    "idTeacher": "123",
+    "nameTeacher": "Juan Perez",
+    "subject": {
+      "id": "3",
       "description": "Programación II",
       "numberCredits": 4
     },
-    "students": [],
+    "enrolments": [],
+    "activities": [],
+    "score": 0.0
+  },
+  {
+    "id": "3",
+    "idTeacher": "123",
+    "nameTeacher": "Juan Perez",
+    "subject": {
+      "id": "4",
+      "description": "Programación III",
+      "numberCredits": 4
+    },
+    "enrolments": [],
     "activities": [],
     "score": 0.0
   }

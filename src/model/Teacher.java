@@ -8,7 +8,7 @@ public class Teacher {
     private String lastName;
     private String user;
     private String password;
-    private ArrayList<Group> groups;
+    private ArrayList<Enrolment> enrolments;
 
     public Teacher(String id, String firstName, String lastName, String user, String password) {
         this.id = id;
@@ -16,12 +16,14 @@ public class Teacher {
         this.lastName = lastName;
         this.user = user;
         this.password = password;
-        groups = new ArrayList<Group>();
+        enrolments = new ArrayList<Enrolment>();
+
     }
 
 
-    public ArrayList<Group> getGroups() {
-        return groups;
+    public ArrayList<Enrolment> getEnrolments() {
+        System.out.println("enr"+ enrolments.size());
+        return enrolments;
     }
 
     public String getId() {

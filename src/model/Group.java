@@ -4,20 +4,31 @@ import java.util.ArrayList;
 
 public class Group {
     private String id;
-    private Teacher teacher;
+    private String idTeacher;
+    private String nameTeacher;
     private Subject subject;
-    private ArrayList<Student> students;
+    private ArrayList<Enrolment> enrolments;
     private ArrayList<Activity> activities ;
     private double score;
 
-    public Group(String id, Teacher teacher, Subject subject) {
+    public Group(String id, String idTeacher,String nameTeacher, Subject subject) {
         this.id = id;
-        this.teacher = teacher;
+        this.idTeacher = idTeacher;
+        this.nameTeacher = nameTeacher;
         this.subject = subject;
-        this.students = new ArrayList<Student>();
+        this.enrolments = new ArrayList<>();
         this.activities = new ArrayList<Activity>();
         this.score = 0;
 
+    }
+
+    public String getIdTeacher() {
+        return idTeacher;
+    }
+
+
+    public String getNameTeacher() {
+        return nameTeacher;
     }
 
     public double getScore() {
@@ -50,21 +61,8 @@ public class Group {
         return false;
     }
 
-    public int findStudent(String idStudent){
-        for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).getId().equals(idStudent)){
-                return i;
-            }
-
-        }
-        return -1;
-    }
-    public ArrayList<Student> getStudents() {
-        return students;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
+    public ArrayList<Enrolment> getEnrolments() {
+        return enrolments;
     }
 
     public String getId() {
@@ -74,5 +72,6 @@ public class Group {
     public Subject getSubject() {
         return subject;
     }
+
 
 }

@@ -28,7 +28,7 @@ public class GroupsTemplate extends JPanel {
         lGrid = new GridBagLayout();
         gbc = new GridBagConstraints();
 
-        lTitulo = new JLabel("Mis Cursos");
+        lTitulo = new JLabel("Mis Cursos:");
         lTitulo.setFont(rService.getFontTProducto());
         lTitulo.setForeground(rService.getColorMain());
         lTitulo.setBorder(rService.getbInferiorAzul());
