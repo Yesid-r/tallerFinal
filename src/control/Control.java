@@ -29,19 +29,6 @@ public class Control {
         this.management.getStudents().addAll(servicePersistence.getStudents());
         System.out.println("cant studiantes: "+ management.getStudents().size());
 
-        this.management.getGroups().add(new Group("4","123","Juan Perez",management.getSubjects().get(5)));
-       /* System.out.println("cant grupos" + management.getGroups().size());
-        management.addEnrolment("12345", "1","123");
-        management.addEnrolment("12345","2","123");
-        management.addEnrolment("12345","3","123");
-        management.addEnrolment("12345","4","123");
-        System.out.println(management.addEnrolment("12345","2","123"));
-        System.out.println("cantidad de gruposd del docente juam: " + management.getTeachers().get(0).getGroups().size());
-        System.out.println("cant inscripcioines: "+ management.getGroups().get(0).getEnrolments().size());
-
-
-        */
-
 
         servicePersistence.dumpTeachers(management.getTeachers());
         servicePersistence.dumpStudents(management.getStudents());
@@ -62,6 +49,7 @@ public class Control {
             case "Estudiante":{
                 for (int i = 0; i < management.getStudents().size(); i++) {
                     if (management.getStudents().get(i).getUser().equals(data[0]) && management.getStudents().get(i).getPassword().equals(data[1])){
+                        System.out.println(true);
                         return true;
                     }
 

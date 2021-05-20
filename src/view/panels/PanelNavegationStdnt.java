@@ -119,4 +119,8 @@ public class PanelNavegationStdnt extends JPanel {
 
 
     }
+
+    public JLabel getDescUser() {
+        return descUser;
+    }
 }

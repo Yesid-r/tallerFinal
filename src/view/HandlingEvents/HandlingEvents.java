@@ -56,10 +56,14 @@ public class HandlingEvents implements ActionListener {
 
 
                 }else if (data[2].equals(String.valueOf(TypeUsers.Estudiante))){
+                    String user2 = control.findNameUser(data[0], data[2] );
                     groupsTemplate = new GroupsTemplate(mainWindow);
                     groupsTemplate.setGroups(control.groupsStudent(data[0]));
                     groupsTemplate.crearProductos();
                     mainWindow.setGroupsTemplate(groupsTemplate);
+                    mainWindow.disablePanels("all");
+                    mainWindow.activePanel(String.valueOf(TypeUsers.Estudiante));
+                    mainWindow.getPanelNavegationStdnt().getDescUser().setText(user2);
 
                     //pendiente disable y enable panels y añadir panel de navegación del estudiante.
 

@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class ResourceService {
 
-    private Color colorMain, colorAlert, colorGrisClaro;
+    private Color colorMain, colorAlert, colorGrisClaro, colorAzulclaro;
     private Font fontTPrincipal, fontTitulo, fontSubtitulo;
     private Font fontMediana, fontLigera, fontTProducto;
     private Border bInferiorAzul, bInferiorRed;
@@ -23,6 +23,10 @@ public class ResourceService {
     this.crearBordes();
     cMano = new Cursor(Cursor.HAND_CURSOR);
         
+    }
+
+    public Color getColorAzulclaro() {
+        return colorAzulclaro;
     }
 
     public JScrollPane construirPanelBarra(
@@ -45,9 +49,10 @@ public class ResourceService {
     }
 
     private void createColors() {
-        this.colorMain = new Color(89, 129, 178);
+        this.colorMain = new Color(43, 43, 43);
         this.colorAlert = new Color(221, 79, 67);
         this.colorGrisClaro = new Color(247, 247, 247);
+        this.colorAzulclaro = new Color(47, 193, 223);
     }
 
     public static ResourceService getService() {
