@@ -6,6 +6,7 @@ import view.frames.MainWindow;
 import view.panels.ActivitiesTemplate;
 import view.panels.GroupTemplate;
 import view.panels.GroupsTemplate;
+import view.panels.PanelNotes;
 import view.service.TypeUsers;
 
 import javax.swing.*;
@@ -118,6 +119,7 @@ public class HandlingEvents implements ActionListener {
             mainWindow.disablePanels(CLOSE_SESSION);
             mainWindow.disablePanels(BTN_GROUP);
             mainWindow.disablePanels("est");
+            mainWindow.disablePanels(NOTES);
             mainWindow.activePanel(CLOSE_SESSION);
             break;
 
@@ -147,6 +149,13 @@ public class HandlingEvents implements ActionListener {
 
             break;
             case NOTES:
+                String[][] dataTable = control.notesStudent(mainWindow.captureDate(LOGIN));
+                PanelNotes panelNotes = new PanelNotes();
+                mainWindow.disablePanels("grupos");
+                panelNotes.showTable(dataTable);
+                mainWindow.setPanelNotes(panelNotes);
+
+                mainWindow.activePanel(NOTES);
                 break;
         }
     }

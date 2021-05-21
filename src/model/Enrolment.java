@@ -2,6 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * @author Dairo Yesid Rincon Carreño
+ */
+
 public class Enrolment {
 
     private String idInscription;
@@ -10,6 +14,11 @@ public class Enrolment {
     private double score;
     private ArrayList<Activity> activities;
 
+    /**
+     * Descripción: metodo constructor de la clase Enrolment
+     * @param idGroup (String): id del grupo al que pertenece la inscripción
+     * @param idStudent (String): id del estudiante a quien pertenece la inscripción
+     */
     public Enrolment(String idGroup, String idStudent) {
         idInscription = idStudent+"-"+idGroup;
         this.idGroup = idGroup;
@@ -18,6 +27,10 @@ public class Enrolment {
         activities = new ArrayList<>();
     }
 
+
+    /**
+     * Descripcion: metodo de acceso
+     */
     public String getIdInscription() {
         return idInscription;
     }

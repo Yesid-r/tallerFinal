@@ -22,7 +22,7 @@ public class MainWindow extends JFrame {
     private JScrollPane scrollPane;
     private JPanel jPanel;
     private PanelManageActivity panelManageActivity;
-
+    private PanelNotes panelNotes;
     private ActivitiesTemplate activitiesTemplate;
 
 
@@ -63,8 +63,13 @@ public class MainWindow extends JFrame {
         panelManageActivity = new PanelManageActivity();
         panelNavegationStdnt = new PanelNavegationStdnt();
         activitiesTemplate = new ActivitiesTemplate(this);
+        panelNotes = new PanelNotes();
 
 
+    }
+
+    public void setPanelNotes(PanelNotes panelNotes) {
+        this.panelNotes = panelNotes;
     }
 
     public GroupsTemplate getGroupsTemplate() {
@@ -122,6 +127,11 @@ public class MainWindow extends JFrame {
             //add(panelManageActivity,BorderLayout.CENTER);
 
 
+        }else if(seccion.equals(HandlingEvents.NOTES)){
+
+            panelNotes.setVisible(true);
+            add(panelNotes,BorderLayout.CENTER);
+
         }
         repaint();
 
@@ -178,6 +188,16 @@ public class MainWindow extends JFrame {
         }else if (seccion.equals("est")){
             //panelManageActivity.setVisible(false);
             //remove(panelManageActivity);
+        }else if(seccion.equals(HandlingEvents.NOTES)){
+            panelNotes.setVisible(false);
+            remove(panelNotes);
+
+        }else if(seccion.equals("grupos")){
+           // groupsTemplate.setVisible(false);
+            //remove(groupsTemplate);
+            scrollPane.setVisible(false);
+            remove(scrollPane);
+
         }
         repaint();
     }

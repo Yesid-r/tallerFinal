@@ -12,7 +12,7 @@
         "nameTeacher": "Juan Perez",
         "subject": {
           "id": "1",
-          "description": "Algoritos y Programación",
+          "description": "Algoritmos y Programación",
           "numberCredits": 4
         },
         "enrolments": [],
