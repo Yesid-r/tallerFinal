@@ -7,6 +7,7 @@ import view.service.ResourceService;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ActivityTemplate extends JPanel{
@@ -38,12 +39,15 @@ public class ActivityTemplate extends JPanel{
 
         //btnDescAct = new JButton( teacher.getEnrolments().get(pos).getActivities().get(posAct).getDescription());
         btnDescAct = new JButton(activity.getDescription());
+        btnDescAct.setBorder(rService.getbInferiorAzul());
+        btnDescAct.setCursor(rService.getcMano());
         this.add(btnDescAct);
         this.add(new JLabel("Fecha de entrega:  " ));
         //lblDateEnd = new JLabel(""+teacher.getEnrolments().get(pos).getActivities().get(posAct).getDateEnd());
         lblDateEnd = new JLabel(""+activity.getDateEnd());
-        if (activity.isStatus()== false){
+        if (activity.getDateEnd().equals(LocalDate.now())){
             lblDateEnd.setBackground(rService.getColorAlert());
+            btnDescAct.setBackground(rService.getColorAlert());
         }
         this.add(lblDateEnd);
     }

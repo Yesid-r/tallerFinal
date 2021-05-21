@@ -16,7 +16,41 @@
           "numberCredits": 4
         },
         "enrolments": [],
-        "activities": [],
+        "activities": [
+          {
+            "id": "123",
+            "description": "crear una plataforma: ",
+            "dateStart": {
+              "year": 2021,
+              "month": 5,
+              "day": 20
+            },
+            "dateEnd": {
+              "year": 2021,
+              "month": 5,
+              "day": 21
+            },
+            "typeActivity": "Taller",
+            "score": 0.0,
+            "status": false
+          },
+          {
+            "id": "124",
+            "description": "Evaluación: ",
+            "dateStart": {
+              "year": 2021,
+              "month": 5,
+              "day": 20
+            },
+            "dateEnd": {
+              "year": 2021,
+              "month": 5,
+              "day": 21
+            },
+            "score": 0.0,
+            "status": false
+          }
+        ],
         "score": 0.0
       },
       {

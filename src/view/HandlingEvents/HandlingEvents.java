@@ -156,6 +156,16 @@ public class HandlingEvents implements ActionListener {
                 mainWindow.setPanelNotes(panelNotes);
 
                 mainWindow.activePanel(NOTES);
+
+                break;
+            case CURSOS_STUDENT:
+                mainWindow.disablePanels(NOTES);
+                String user2 = control.findNameUser(mainWindow.captureDate(LOGIN)[0], mainWindow.captureDate(LOGIN)[2] );
+                groupsTemplate = new GroupsTemplate(mainWindow);
+                groupsTemplate.setGroups(control.groupsStudent(mainWindow.captureDate(LOGIN)[0]));
+                groupsTemplate.crearProductos();
+                mainWindow.setGroupsTemplate(groupsTemplate);
+                mainWindow.activePanel(CURSOS_STUDENT);
                 break;
         }
     }

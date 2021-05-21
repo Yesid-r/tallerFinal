@@ -132,6 +132,11 @@ public class MainWindow extends JFrame {
             panelNotes.setVisible(true);
             add(panelNotes,BorderLayout.CENTER);
 
+        }else if (seccion.equals(HandlingEvents.CURSOS_STUDENT))
+        {
+            scrollPane.setVisible(true);
+            scrollPane = new JScrollPane(groupsTemplate);
+            add(scrollPane, BorderLayout.CENTER);
         }
         repaint();
 
