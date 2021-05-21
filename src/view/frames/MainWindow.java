@@ -9,6 +9,7 @@ import view.service.TypeUsers;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class MainWindow extends JFrame {
     private PanelLogin panelLogin;
@@ -21,6 +22,8 @@ public class MainWindow extends JFrame {
     private JScrollPane scrollPane;
     private JPanel jPanel;
     private PanelManageActivity panelManageActivity;
+
+    private ActivitiesTemplate activitiesTemplate;
 
 
     public MainWindow() {
@@ -40,6 +43,9 @@ public class MainWindow extends JFrame {
         panelLogin.assignHandlingEvents(this);
         panelNavigationT.assignHandlingEvents(this);
         panelNavegationStdnt.assignHandlingEvents(this);
+        activitiesTemplate.addActionListener();
+        panelManageActivity.assignHandlingEvents(this);
+
     }
 
     public void beginComponents(){
@@ -56,6 +62,8 @@ public class MainWindow extends JFrame {
         jPanel.setLayout(new FlowLayout());
         panelManageActivity = new PanelManageActivity();
         panelNavegationStdnt = new PanelNavegationStdnt();
+        activitiesTemplate = new ActivitiesTemplate(this);
+
 
     }
 
@@ -63,25 +71,13 @@ public class MainWindow extends JFrame {
         return groupsTemplate;
     }
 
+
+
     private void addComponents() {
 
-     add(panelImage,BorderLayout.CENTER);
-     add(panelLogin, BorderLayout.EAST);
-        //add(panelManageActivity, BorderLayout.CENTER);
-       /*Teacher teacher = new Teacher("12","juan","pepe","user","password");
-        teacher.getGroups().add(new Group("12","123","123" , new Subject("1","312",(short)4)));
-        teacher.getGroups().get(0).getActivities().add(new Activity("Jm", LocalDate.now(), LocalDate.now(), TypeActivity.Evaluación));
 
-        ActivityTemplate activityTemplate = new ActivityTemplate(this);
-        activityTemplate.createActivityTeacher(teacher,0,0);
-        add(activityTemplate,BorderLayout.SOUTH);
-
-        */
-       // panelManageActivity = new PanelManageActivity();
-        //add(panelManageActivity, BorderLayout.WEST);
-
-
-
+    add(panelImage,BorderLayout.CENTER);
+    add(panelLogin, BorderLayout.EAST);
 
     }
     public void activePanel(String seccion){
@@ -111,6 +107,20 @@ public class MainWindow extends JFrame {
             panelLogin.setVisible(true);
             add(panelImage, BorderLayout.CENTER);
             add(panelLogin, BorderLayout.EAST);
+
+        }else if (seccion.equals(HandlingEvents.BTN_GROUP)){
+            panelNavigationT.setVisible(true);
+            add(panelNavigationT, BorderLayout.WEST);
+            activitiesTemplate.setVisible(true);
+            add(activitiesTemplate,BorderLayout.CENTER);
+            panelManageActivity.setVisible(true);
+            add(panelManageActivity,BorderLayout.EAST);
+
+        }else if (seccion.equals(HandlingEvents.ADD_ACTIVITY)){
+
+           // panelManageActivity.setVisible(true);
+            //add(panelManageActivity,BorderLayout.CENTER);
+
 
         }
         repaint();
@@ -151,6 +161,23 @@ public class MainWindow extends JFrame {
             panelNavegationStdnt.setVisible(false);
             remove(panelNavegationStdnt);
 
+        }else if (seccion.equals(HandlingEvents.BTN_GROUP)){
+            activitiesTemplate.setVisible(false);
+            remove(activitiesTemplate);
+            panelManageActivity.setVisible(false);
+            remove(panelManageActivity);
+        }else if (seccion.equals(HandlingEvents.ADD_ACTIVITY))
+        {
+            activitiesTemplate.setVisible(false);
+            remove(activitiesTemplate);
+            groupsTemplate.setVisible(false);
+            remove(groupsTemplate);
+        }else if (seccion.equals(HandlingEvents.SAVE_ACTIVITY)){
+            //panelManageActivity.setVisible(false);
+            //remove(panelManageActivity);
+        }else if (seccion.equals("est")){
+            //panelManageActivity.setVisible(false);
+            //remove(panelManageActivity);
         }
         repaint();
     }
@@ -166,6 +193,19 @@ public class MainWindow extends JFrame {
 
         }else if (seccion.equals("cursos")){
 
+        }else if (seccion.equals(HandlingEvents.SAVE_ACTIVITY))
+        {
+            String[] data={
+                   // panelManageActivity.getTxtId().getText(),
+                    //panelManageActivity.getTxtDescription().getText(),
+                    //panelManageActivity.dateStart(),
+                    //panelManageActivity.dateEnd(),
+                    //""+panelManageActivity.getTypeActivity().getSelectedItem(),
+                    "",
+                    "0"
+
+            };
+            return  data;
         }
         return null;
     }
@@ -191,5 +231,9 @@ public class MainWindow extends JFrame {
 
     public void setGroupsTemplate(GroupsTemplate groupsTemplate) {
         this.groupsTemplate = groupsTemplate;
+    }
+
+    public void setActivitiesTemplate(ActivitiesTemplate activitiesTemplate) {
+        this.activitiesTemplate = activitiesTemplate;
     }
 }

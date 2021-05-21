@@ -5,6 +5,8 @@ import persistencia.ServicePersistence;
 import view.service.TypeUsers;
 
 import javax.swing.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Control {
@@ -127,5 +129,34 @@ public class Control {
     }
 
 
+    public ArrayList<Activity> activities(String user, String typeUser, String idGroup) {
+        ArrayList<Activity> activities = new ArrayList<>();
+        if (typeUser.equals(String.valueOf(TypeUsers.Docente))){
+            int posGroup = management.getTeachers().get(findTeacherbyUser(user)).findGroup(idGroup);
+            return management.getTeachers().get(findTeacherbyUser(user)).getGroups().get(posGroup).getActivities();
+        }else if(typeUser.equals(String.valueOf(TypeUsers.Estudiante))){
 
+        }
+        return activities;
+    }
+
+
+
+    public boolean saveActivity(String[] dataActivity, String idGroupA, String userTeacher) {
+        Activity activity = null;
+        try {
+             activity = new Activity(dataActivity[1],  changeToLocalDate(dataActivity[2]), changeToLocalDate(dataActivity[3]), TypeActivity.valueOf(dataActivity[4]));
+        }catch (Exception e){
+            return false;
+        }
+
+
+        management.addActivity(idGroupA,userTeacher,activity);
+
+        return false;
+
+    }
+    public LocalDate changeToLocalDate(String date){
+        return  LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    }
 }

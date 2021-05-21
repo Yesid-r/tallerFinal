@@ -1,7 +1,10 @@
 package view.HandlingEvents;
 
 import control.Control;
+import model.Group;
 import view.frames.MainWindow;
+import view.panels.ActivitiesTemplate;
+import view.panels.GroupTemplate;
 import view.panels.GroupsTemplate;
 import view.service.TypeUsers;
 
@@ -19,10 +22,19 @@ public class HandlingEvents implements ActionListener {
     public static final String NOTES = "calificaciones estudiante";
     public static final String CURSOS_STUDENT = "cursos del estudiante";
     public static final String SAVE_NOTES = "Guardar notas";
+    public static final String ADD_ACTIVITY = "añadir actividad";
+    public static final String SAVE_ACTIVITY = "GUARDAR ACTIVIDAD";
+    public static final String QUALIFY_ACTIVITY = "calificar actividad";
     private  MainWindow mainWindow;
     private Control control;
     private GroupsTemplate groupsTemplate;
+    private ActivitiesTemplate activitiesTemplate;
     private JScrollPane jScrollPane;
+    private String user="";
+    private String typeUser="";
+    private JButton btnGroup = new JButton();
+    private String grp[] = new String[10];
+
     public HandlingEvents(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
         this.control = new Control();
@@ -31,16 +43,24 @@ public class HandlingEvents implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String userGlobal = "";
-        String typeUser = "";
+        if (e.getActionCommand().equals(BTN_GROUP)){
+            System.out.println("ingreso");
+            JButton btn = (JButton) e.getSource();
+            int cantGrpups = 0;
+            grp[cantGrpups] = btn.getText();
+            cantGrpups++;
+        }
+
+
+
         switch (e.getActionCommand()){
 
 
         case LOGIN:
         String [] data = mainWindow.captureDate(LOGIN);
-
-            userGlobal = data[0];
-            typeUser = data[2];
+            System.out.println(data[0]+ data[1]+ data[2]);
+        this.user = mainWindow.captureDate(LOGIN)[0];
+        this.typeUser= data[2];
 
             if (control.verifyUser(data)) {
                 String user = control.findNameUser(data[0], data[2]);
@@ -70,25 +90,67 @@ public class HandlingEvents implements ActionListener {
                 }
             }else {
                 //Joption con advertencia usuario o contraseña incorrecto.
+
                 JOptionPane.showMessageDialog(null,"Algo quedo mal");
             }
 
 
             break;
         case BTN_GROUP:
-            JButton btn = (JButton) e.getSource();
-            String idGroup = btn.getText();
-            if (typeUser.equals(String.valueOf(TypeUsers.Docente))){
+             JButton btn = (JButton) e.getSource();
 
-            }
+             System.out.println("iddel grupo:"+ btn.getText());
+
+           String[] dataG = mainWindow.captureDate(LOGIN);
+           if (dataG[2].equals(String.valueOf(TypeUsers.Docente))){
+               activitiesTemplate = new ActivitiesTemplate(mainWindow);
+               activitiesTemplate.setActivities(control.activities(dataG[0], dataG[2], btn.getText()));
+               activitiesTemplate.createActivities();
+               mainWindow.setActivitiesTemplate(activitiesTemplate);
+
+               mainWindow.disablePanels(CLOSE_SESSION);
+               mainWindow.activePanel(BTN_GROUP);
+           }
+
 
             break;
         case CLOSE_SESSION:{
             mainWindow.disablePanels(CLOSE_SESSION);
+            mainWindow.disablePanels(BTN_GROUP);
+            mainWindow.disablePanels("est");
             mainWindow.activePanel(CLOSE_SESSION);
+            break;
+
 
         }
+            case ADD_ACTIVITY: {
+                System.out.println("btn añadir actividad");
+                // mainWindow.registerActivity();
+                mainWindow.disablePanels(ADD_ACTIVITY);
+                mainWindow.activePanel(ADD_ACTIVITY);
+            }
             break;
+            case SAVE_ACTIVITY:
+                for (int i = 0; i < grp.length; i++) {
+
+                    System.out.println("id del grupo: "+i+" "+grp[i]);
+                }
+
+                String[] dataActivity = mainWindow.captureDate(SAVE_ACTIVITY);
+                //if (control.saveActivity(dataActivity, btnGroup.getText(), mainWindow.captureDate(LOGIN)[0])){
+                    //JOptionPane.showMessageDialog(null,"GUARDADO CORRECTAMENTE");
+
+                //}else {
+                  //  JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+               // }
+
+
+            break;
+            case NOTES:
+                break;
         }
+    }
+    public void activities(String[]data){
+
     }
 }

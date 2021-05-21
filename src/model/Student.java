@@ -37,6 +37,7 @@ public class Student {
 
 
 
+
     public void setAverage(double average) {
         this.average = average;
     }

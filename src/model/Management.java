@@ -54,6 +54,26 @@ public class Management {
         }
         return -1;
     }
+    public boolean addActivity(String idGroup, String userTeacher, Activity activity){
+        int posGroup = findGroup(idGroup);
+        groups.get(posGroup).getActivities().add(activity);
+        Group group = groups.get(posGroup);
+        for (int i = 0; i < group.getEnrolments().size(); i++) {
+            int posStudent  = findStudent(group.getEnrolments().get(i).getIdStudent());
+            //findStudent(group.getEnrolments().get(i).getIdStudent())
+            Student student = students.get(posStudent);
+            int posEnrollment = student.findEnrolment(student.getId()+"-"+idGroup);
+            //students.get(findStudent(group.getEnrolments().get(i).getIdStudent())).getEnrolments().get(posEnrollment).getActivities().add(activity);
+
+            try {
+                students.get(posStudent).getEnrolments().get(posEnrollment).getActivities().add((Activity) activity.clone());
+            } catch (CloneNotSupportedException e) {
+                return false;
+            }
+        }
+        return false;
+
+    }
     public boolean addEnrolment(String idStudent, String idGroup, String idTeacher){
         int posStudent = findStudent(idStudent);
         int posGroup = findGroup(idGroup);
